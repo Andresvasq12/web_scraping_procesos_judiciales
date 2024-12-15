@@ -64,7 +64,7 @@ prefs = {
     "download.prompt_for_download": False
 }
 options.add_experimental_option('prefs', prefs)
-options.add_argument(f"--user-data-dir={profile_path}")
+#options.add_argument(f"--user-data-dir={profile_path}")
 options.add_argument("--profile-directory=Default")
 options.add_argument("--headless=new")
 options.add_argument('window-size=1920x1080')
