@@ -5,6 +5,7 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager  
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -63,15 +64,16 @@ prefs = {
     "download.prompt_for_download": False
 }
 options.add_experimental_option('prefs', prefs)
-#options.add_argument(f"--user-data-dir={profile_path}")
+options.add_argument(f"--user-data-dir={profile_path}")
 options.add_argument("--profile-directory=Default")
-#options.add_argument("--headless=new")
+options.add_argument("--headless=new")
 options.add_argument('window-size=1920x1080')
 options.add_extension(r"/home/ec2-user/frontera/Captcha.crx")
 # Inicializar el driver de Selenium
 try:
     service = Service('/usr/bin/chromedriver')  # Ruta al chromedriver
-    driver = webdriver.Chrome(service=service, options=options) 
+   
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install())) 
     wait = WebDriverWait(driver, 50)
 except Exception as e:
     print(f"Error al inicializar Selenium: {e}")
