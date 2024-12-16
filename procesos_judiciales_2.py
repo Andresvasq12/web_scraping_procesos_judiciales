@@ -71,9 +71,9 @@ options.add_argument('window-size=1920x1080')
 options.add_extension(r"/home/ubuntu/environment/frontera/Captcha.crx")
 # Inicializar el driver de Selenium
 try:
-    service = Service('/usr/bin/chromedriver')  # Ruta al chromedriver
+    #service = Service('/usr/bin/chromedriver')  # Ruta al chromedriver
    
-    driver = webdriver.Chrome(service=service) 
+    driver = driver = webdriver.Chrome(options=options)
     wait = WebDriverWait(driver, 50)
 except Exception as e:
     print(f"Error al inicializar Selenium: {e}")
