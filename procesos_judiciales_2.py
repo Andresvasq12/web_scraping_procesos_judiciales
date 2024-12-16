@@ -73,7 +73,7 @@ options.add_extension(r"/home/ubuntu/environment/frontera/Captcha.crx")
 try:
     service = Service('/usr/bin/chromedriver')  # Ruta al chromedriver
    
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install())) 
+    driver = webdriver.Chrome(service=service) 
     wait = WebDriverWait(driver, 50)
 except Exception as e:
     print(f"Error al inicializar Selenium: {e}")
