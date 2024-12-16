@@ -60,7 +60,7 @@ except json.JSONDecodeError as e:
 # Configuración de Selenium y opciones del navegador
 options = webdriver.ChromeOptions()
 prefs = {
-    'download.default_directory': r'/home/ec2-user/frontera',
+    'download.default_directory': r'/home/ubuntu/environment/frontera',
     "download.prompt_for_download": False
 }
 options.add_experimental_option('prefs', prefs)
@@ -68,7 +68,7 @@ options.add_experimental_option('prefs', prefs)
 options.add_argument("--profile-directory=Default")
 options.add_argument("--headless=new")
 options.add_argument('window-size=1920x1080')
-options.add_extension(r"/home/ec2-user/frontera/Captcha.crx")
+options.add_extension(r"/home/ubuntu/environment/frontera/Captcha.crx")
 # Inicializar el driver de Selenium
 try:
     service = Service('/usr/bin/chromedriver')  # Ruta al chromedriver
@@ -157,7 +157,7 @@ for i, item in enumerate(response_list):
 
 # Guardar los resultados en un DataFrame
 results_df = pd.DataFrame(data)
-results_df.to_csv(r'/home/ec2-user/frontera/resultados_descarga.csv', index=False)
+results_df.to_csv(r'/home/ubuntu/environment/frontera/resultados_descarga.csv', index=False)
 
 # Finalizar ejecución
 print("Proceso completado.")
