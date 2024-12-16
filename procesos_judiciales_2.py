@@ -65,8 +65,8 @@ prefs = {
 }
 options.add_experimental_option('prefs', prefs)
 #options.add_argument(f"--user-data-dir={profile_path}")
-options.add_argument("--profile-directory=Default")
-options.add_argument("--headless=new")
+#options.add_argument("--profile-directory=Default")
+options.add_argument("--headless")
 options.add_argument('window-size=1920x1080')
 options.add_extension(r"/home/ubuntu/environment/frontera/Captcha.crx")
 # Inicializar el driver de Selenium
