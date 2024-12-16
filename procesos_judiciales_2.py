@@ -49,7 +49,7 @@ try:
         json=payload
     )
     req.raise_for_status()
-    response_list = req.json()[:2]  # Limitar la lista de respuestas a los primeros 10 elementos
+    response_list = req.json()[:10]  # Limitar la lista de respuestas a los primeros 10 elementos
 except requests.RequestException as e:
     print(f"Error al realizar la solicitud: {e}")
     exit()
